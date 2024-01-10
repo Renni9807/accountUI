@@ -9,7 +9,7 @@ class CurrencyCard extends StatelessWidget {
   final _blackColor = const Color(0xFF1F2123);
 
   final int order;
-  Map<int, Offset> offsetVal = {
+  final Map<int, Offset> offsetVal = {
     1: const Offset(0, 0),
     2: const Offset(0, -20),
     3: const Offset(0, -40),

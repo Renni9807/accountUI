@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:toonflix/widget/button.dart';
-import 'package:toonflix/widget/currency_card.dart';
+import 'package:accountUI/widget/button.dart';
+import 'package:accountUI/widget/currency_card.dart';
 
 void main() {
   runApp(const App()); // runApp function is imported

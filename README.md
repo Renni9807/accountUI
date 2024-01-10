@@ -24,3 +24,7 @@ Use clipBehavior as container’s element.
 clipBehavior —> specify how you want your container to behave when any item overflows it.
 
 ex, if you use clipBehavior: Clip.hardEdge, then the part of icon overflows the container will be vanished.
+
+***1/10 2024
+Simplify the main code - enable to choose offset in main.dart
+

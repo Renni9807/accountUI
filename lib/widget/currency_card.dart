@@ -2,19 +2,27 @@ import 'package:flutter/material.dart';
 
 class CurrencyCard extends StatelessWidget {
   final String name, code, amount;
-  // Icon type is IconData so
+  // Icon type is IconData
   final IconData icon;
   final bool isInverted;
 
   final _blackColor = const Color(0xFF1F2123);
 
-  const CurrencyCard({
+  final int order;
+  Map<int, Offset> offsetVal = {
+    1: const Offset(0, 0),
+    2: const Offset(0, -20),
+    3: const Offset(0, -40),
+  };
+
+  CurrencyCard({
     super.key,
     required this.name,
     required this.code,
     required this.amount,
     required this.icon,
     required this.isInverted,
+    required this.order,
   });
 
   // CurrencyCard({super.key,
@@ -25,11 +33,13 @@ class CurrencyCard extends StatelessWidget {
   // })
 
 // think what is customizable.
-// we need three different currency card so currency, amount and currency sign should be customizable.
+// need three different currency card so currency, amount and currency sign should be customizable.
   @override
   Widget build(BuildContext context) {
     return Transform.translate(
-      offset: const Offset(0, -20),
+      offset: offsetVal[order] ?? const Offset(0, 0),
+      // Need to deal with null exception as order may not be a key of offsetVal.
+      // So by using ?? operator, I dissolve this issue.
       child: Container(
         clipBehavior: Clip.hardEdge,
         decoration: BoxDecoration(
